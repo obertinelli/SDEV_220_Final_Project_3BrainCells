@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.login, name='login'), #user must login first
+    path('', views.home_screen, name='home_screen'), # main screen link
 ]
