@@ -1,34 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Inventory - Home Screen</title>
-</head>
-<body>
-
-    <h1>Welcome!</h1>
-
-    <div>
-
-        <p>This is where the books will show up</p>
+{% extends 'pages/base.html' %}
+   
+   {% block content %}
+        <!-- Card display for each book -->
 
         {% for book in books %}
 
         <div class="book-display-card">
 
-            <h2 class="book-display-title">{{ book.title }}</h2>
-            <h3 class="book-display-author">{{ book.author }}</h3>
-            <p class="book-display-isbn">{{ book.isbn }}</p>
-            <span class="book-display-price">${{ book.price }}</span>
+            <h2 class="book-display-title">
+                <span class="attribute">Title:</span> {{ book.title }}
+            </h2>
+            <h3 class="book-display-author">
+                <span class="attribute">Author:</span> {{ book.author }}</h3>
+            <p class="book-display-isbn">
+                <span class="attribute">ISBN:</span> {{ book.isbn }}</p>
+            <p class="book-display-price">
+                <span class="attribute">Price:</span> ${{ book.price }}
+            </p>
+
+            <span class="book-display-btns">
+                <button>Edit</button>
+                <button>Delete</button>
+                <button>Order</button>
+            </span>
 
         </div>
 
             
 
         {% endfor %}
-        
-    </div>
-    
-</body>
-</html>
+       
+    {% endblock %}
