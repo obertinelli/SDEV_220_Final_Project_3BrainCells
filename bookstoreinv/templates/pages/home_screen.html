@@ -13,7 +13,20 @@
 
         <p>This is where the books will show up</p>
 
-        {{ books }}
+        {% for book in books %}
+
+        <div class="book-display-card">
+
+            <h2 class="book-display-title">{{ book.title }}</h2>
+            <h3 class="book-display-author">{{ book.author }}</h3>
+            <p class="book-display-isbn">{{ book.isbn }}</p>
+            <span class="book-display-price">${{ book.price }}</span>
+
+        </div>
+
+            
+
+        {% endfor %}
         
     </div>
     
