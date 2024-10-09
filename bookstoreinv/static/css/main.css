@@ -23,7 +23,7 @@ header{
     background-color: white;
 }
 
-.add-book-btn{
+.btn{
     border-radius: 10px;
     height: 40px;
     border: solid 1px black;
@@ -123,4 +123,13 @@ header{
     background-color: transparent;
     border: 1px solid black;
     border-radius: 10px;
+}
+
+.delete-form > button{
+    background-color: white;
+    transition: background-color 0.7s ease-out;
+}
+
+.delete-form > button:hover{
+    background-color: red;
 }

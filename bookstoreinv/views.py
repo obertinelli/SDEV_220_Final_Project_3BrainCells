@@ -40,3 +40,9 @@ def book_edit(request, pk):
     else:
         form = BookForm(instance=post)
     return render(request, 'pages/add_book.html', {'form': form})
+
+def book_remove(request, pk):
+    post = get_object_or_404(Book, pk=pk)
+    if request.method == "POST":
+        post.delete()
+    return redirect('home_screen')

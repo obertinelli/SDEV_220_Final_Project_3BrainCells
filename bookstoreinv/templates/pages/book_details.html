@@ -9,11 +9,11 @@
 
     <div class="tool-bar">
         <a href="{% url 'home_screen' %}" >
-            <button class="add-book-btn">Home</button>
+            <button class="btn">Home</button>
         </a>
 
         <a href="#" >
-            <button class="add-book-btn">Sign Out</button>
+            <button class="btn">Sign Out</button>
         </a>
     </div>
 
@@ -36,7 +36,13 @@
                 <a href="{% url 'book_edit' pk=book.pk %}">
                     <button class="book-view-btn">Edit</button>
                 </a>
+
+                <form method="POST" action="{% url 'book_remove' pk=book.pk %}" class="delete-form">{% csrf_token %}
+                    <button type="submit" class="book-view-btn" name="delete">Delete</button>
+                </form>
             </span>
+
+            
         {% endif %}
 
         </div>
