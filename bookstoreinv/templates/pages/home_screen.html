@@ -3,31 +3,59 @@
    {% block content %}
         <!-- Card display for each book -->
 
-        {% for book in books %}
+        <header>
+            <h1>Welcome!</h1>
+        </header>
+        
+        <h2 class="inventory-title">Current Inventory</h2>
 
-        <div class="book-display-card">
+        <div class="tool-bar">
+            <a href="{% url 'add_book' %}" >
+                <button class="add-book-btn">Add Book</button>
+            </a>
 
-            <h2 class="book-display-title">
-                <span class="attribute">Title:</span> {{ book.title }}
-            </h2>
-            <h3 class="book-display-author">
-                <span class="attribute">Author:</span> {{ book.author }}</h3>
-            <p class="book-display-isbn">
-                <span class="attribute">ISBN:</span> {{ book.isbn }}</p>
-            <p class="book-display-price">
-                <span class="attribute">Price:</span> ${{ book.price }}
-            </p>
-
-            <span class="book-display-btns">
-                <button>Edit</button>
-                <button>Delete</button>
-                <button>Order</button>
-            </span>
-
+            <a href="#" >
+                <button class="add-book-btn">Order</button>
+            </a>
         </div>
 
-            
+
+        <div class="display-container">
+
+        {% for book in books %}
+        
+
+            <div class="book-display-card">
+
+                <h2 class="book-display-title">
+                    <span class="attribute">Title:</span> {{ book.title }}
+                </h2>
+                <h3 class="book-display-author">
+                    <span class="attribute">Author:</span> {{ book.author }}</h3>
+                <p class="book-display-isbn">
+                    <span class="attribute">ISBN:</span> {{ book.isbn }}</p>
+                <p class="book-display-price">
+                    <span class="attribute">Price:</span> ${{ book.price }}
+                </p>
+
+                <p>
+                    <span>Quantity:</span> {{ book.quantity }}
+                </p>
+
+                <span class="book-display-btns">
+                    <a href="{% url 'book_details' pk=book.pk %}"><button class="book-view-btn">Details</button></a>
+
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'book_edit' pk=book.pk %}">
+                            <button class="book-view-btn">Edit</button>
+                        </a>
+                    {% endif %}
+                </span>
+
+            </div>
 
         {% endfor %}
+
+        </div> 
        
     {% endblock %}

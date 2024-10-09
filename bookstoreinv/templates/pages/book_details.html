@@ -1,0 +1,48 @@
+{% extends 'pages/base.html' %}
+
+
+    {% block content %}
+
+    <header>
+        <h1>Book Details</h1>
+    </header>
+
+    <div class="tool-bar">
+        <a href="{% url 'home_screen' %}" >
+            <button class="add-book-btn">Home</button>
+        </a>
+
+        <a href="#" >
+            <button class="add-book-btn">Sign Out</button>
+        </a>
+    </div>
+
+    <div class="book-details-display">
+
+        <div class="book-details-container">
+
+        <h2><span class="attribute">Title:</span> {{ book.title }}</h2>
+
+        <h3><span class="attribute">Author:</span> {{ book.author }}</h3>
+
+        <p><span class="attribute">ISBN:</span> {{ book.isbn }}</p>
+
+        <p><span class="attribute">Price:</span> {{ book.price }}</p>
+
+        <p><span class="attribute">Quantity:</span> {{ book.quantity }}</p>
+
+        {% if user.is_authenticated %}
+            <span class="book-display-btns">
+                <a href="{% url 'book_edit' pk=book.pk %}">
+                    <button class="book-view-btn">Edit</button>
+                </a>
+            </span>
+        {% endif %}
+
+        </div>
+
+    </div>
+
+    
+
+{% endblock %}

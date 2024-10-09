@@ -13,6 +13,22 @@ header{
     padding: 20px 0;
 }
 
+.tool-bar{
+    margin: 30px 0;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.add-book-btn{
+    border-radius: 10px;
+    height: 40px;
+    border: solid 1px black;
+}
+
 /* book display area */
 .display-container{
     display: flex;
@@ -26,7 +42,7 @@ header{
 }
 
 /* book display cards */
-.book-display-card {
+.book-display-card{
     background-color: white;
     box-shadow: darkgray 4px 4px 10px;
     border-radius: 10px;
@@ -46,9 +62,10 @@ header{
 }
 
 /* all button styles */
-button{
+.book-view-btn{
     width: 70px;
     height: 35px;
+    background-color: transparent;
     border: 1px solid black;
     border-radius: 10px;
 }
@@ -61,4 +78,49 @@ button{
 .attribute{
     font-weight: bold;
     text-decoration: underline;
+}
+
+/* book detail card styles */
+.book-details-container {
+    background-color: white;
+    box-shadow: darkgray 4px 4px 10px;
+    border-radius: 10px;
+    min-height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 40px 20px;
+}
+
+/* book detail display format */
+.book-details-display, .add-book-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1px black;
+}
+
+.post-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    height: 350px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: darkgray 4px 4px 10px;
+    border: solid 1px black;
+}
+
+.add-book-submit-btn {
+    width: 70px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
 }
