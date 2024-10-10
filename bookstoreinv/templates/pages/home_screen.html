@@ -1,0 +1,63 @@
+{% extends 'pages/base.html' %}
+   
+   {% block content %}
+        <!-- Card display for each book -->
+
+        <header>
+            {% if user.is_authenticated %}
+                <h1>Welcome, {{ user.username }}!</h1>
+            {% else %}
+                <h1>Welcome!</h1>
+            {% endif %}
+        </header>
+        
+        <h2 class="inventory-title">Current Inventory</h2>
+
+        <div class="tool-bar">
+
+            <a href="{% url 'add_book' %}" >
+                <button class="btn">Add Book</button>
+            </a>
+
+        </div>
+
+
+        <div class="display-container">
+
+        {% for book in books %}
+        
+
+            <div class="book-display-card">
+
+                <h2 class="book-display-title">
+                    <span class="attribute">Title:</span> {{ book.title }}
+                </h2>
+                <h3 class="book-display-author">
+                    <span class="attribute">Author:</span> {{ book.author }}</h3>
+                <p class="book-display-isbn">
+                    <span class="attribute">ISBN:</span> {{ book.isbn }}</p>
+                <p class="book-display-price">
+                    <span class="attribute">Price:</span> ${{ book.price }}
+                </p>
+
+                <p>
+                    <span>Quantity:</span> {{ book.quantity }}
+                </p>
+
+                <span class="book-display-btns">
+                    <a href="{% url 'book_details' pk=book.pk %}"><button class="book-view-btn">Details</button></a>
+
+                    
+                    <a href="{% url 'book_edit' pk=book.pk %}">
+                        <button class="book-view-btn">Edit</button>
+                    </a>
+                    
+                </span>
+
+            </div>
+
+        {% endfor %}
+
+        </div> 
+       
+    {% endblock %}

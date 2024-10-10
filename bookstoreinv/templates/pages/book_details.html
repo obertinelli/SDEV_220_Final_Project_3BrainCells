@@ -1,0 +1,50 @@
+{% extends 'pages/base.html' %}
+
+
+    {% block content %}
+
+    <header>
+        <h1>Book Details</h1>
+    </header>
+
+    <div class="tool-bar">
+        <a href="{% url 'home_screen' %}" >
+            <button class="btn">Home</button>
+        </a>
+    </div>
+
+    <div class="book-details-display">
+
+        <div class="book-details-container">
+
+        <h2><span class="attribute">Title:</span> {{ book.title }}</h2>
+
+        <h3><span class="attribute">Author:</span> {{ book.author }}</h3>
+
+        <p><span class="attribute">ISBN:</span> {{ book.isbn }}</p>
+
+        <p><span class="attribute">Price:</span> {{ book.price }}</p>
+
+        <p><span class="attribute">Quantity:</span> {{ book.quantity }}</p>
+
+        
+        <span class="book-display-btns">
+            <a href="{% url 'book_edit' pk=book.pk %}">
+                <button class="book-view-btn">Edit</button>
+            </a>
+
+            <form method="POST" action="{% url 'book_remove' pk=book.pk %}" class="delete-form">{% csrf_token %}
+                <button type="submit" class="book-view-btn" name="delete">Delete</button>
+            </form>
+        </span>
+
+            
+        
+
+        </div>
+
+    </div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,135 @@
+
+
+body{
+    background-color: lightgrey;
+    margin: 10px 60px;
+    font-family: 'Open Sans', 'Arial', 'sans-serif';
+}
+
+/* welcome title */
+header{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px 0;
+}
+
+.tool-bar{
+    margin: 30px 0;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.btn{
+    border-radius: 10px;
+    height: 40px;
+    border: solid 1px black;
+}
+
+/* book display area */
+.display-container{
+    display: flex;
+    flex-wrap: wrap;
+    border: 0.5px solid black;
+    border-radius: 10px;
+}
+
+.inventory-title{
+    margin: 20px 0;
+}
+
+/* book display cards */
+.book-display-card{
+    background-color: white;
+    box-shadow: darkgray 4px 4px 10px;
+    border-radius: 10px;
+    min-height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 40px 20px;
+}
+
+/* layout for buttons in cards */
+.book-display-btns{
+    display: flex;
+    justify-content: space-evenly
+}
+
+/* all button styles */
+.book-view-btn{
+    width: 70px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.display-container > h2, h3{
+    font-size: large;
+}
+
+/* bold and underline card attributes */
+.attribute{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* book detail card styles */
+.book-details-container {
+    background-color: white;
+    box-shadow: darkgray 4px 4px 10px;
+    border-radius: 10px;
+    min-height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 40px 20px;
+}
+
+/* book detail display format */
+.book-details-display, .add-book-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1px black;
+}
+
+.post-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    height: 350px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: darkgray 4px 4px 10px;
+    border: solid 1px black;
+}
+
+.add-book-submit-btn {
+    width: 70px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.delete-form > button{
+    background-color: white;
+    transition: background-color 0.7s ease-out;
+}
+
+.delete-form > button:hover{
+    background-color: red;
+}

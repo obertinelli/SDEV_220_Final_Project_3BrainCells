@@ -1,0 +1,23 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+    <header>
+        <h1>Add New Book</h1>
+    </header>
+
+    <div class="tool-bar">
+        <a href="{% url 'home_screen' %}" >
+            <button class="btn">Home</button>
+        </a>
+    </div>
+
+    <div class="add-book-form-container">
+
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="add-book-submit-btn">Add</button>
+        </form>
+
+    </div>
+{% endblock %}
