@@ -18,7 +18,6 @@ def book_details(request, pk):
     return render(request, 'pages/book_details.html', {'book': book})
 
 # view for add_book - logic to add new books
-@login_required
 def add_book(request):
     if request.method == "POST":
         form = BookForm(request.POST)
@@ -31,7 +30,6 @@ def add_book(request):
     return render(request, 'pages/add_book.html', {'form': form})
 
 # view for edit_book - logic to edit existing book content
-@login_required
 def book_edit(request, pk):
     post = get_object_or_404(Book, pk=pk)
     if request.method == "POST":
@@ -45,7 +43,6 @@ def book_edit(request, pk):
     return render(request, 'pages/add_book.html', {'form': form})
 
 # view for book_remove - logic to delete a book from the database
-@login_required
 def book_remove(request, pk):
     post = get_object_or_404(Book, pk=pk)
     if request.method == "POST":

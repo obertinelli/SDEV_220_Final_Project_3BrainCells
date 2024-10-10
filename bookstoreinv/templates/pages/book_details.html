@@ -11,10 +11,6 @@
         <a href="{% url 'home_screen' %}" >
             <button class="btn">Home</button>
         </a>
-
-        <a href="#" >
-            <button class="btn">Sign Out</button>
-        </a>
     </div>
 
     <div class="book-details-display">
@@ -31,19 +27,19 @@
 
         <p><span class="attribute">Quantity:</span> {{ book.quantity }}</p>
 
-        {% if user.is_authenticated %}
-            <span class="book-display-btns">
-                <a href="{% url 'book_edit' pk=book.pk %}">
-                    <button class="book-view-btn">Edit</button>
-                </a>
+        
+        <span class="book-display-btns">
+            <a href="{% url 'book_edit' pk=book.pk %}">
+                <button class="book-view-btn">Edit</button>
+            </a>
 
-                <form method="POST" action="{% url 'book_remove' pk=book.pk %}" class="delete-form">{% csrf_token %}
-                    <button type="submit" class="book-view-btn" name="delete">Delete</button>
-                </form>
-            </span>
+            <form method="POST" action="{% url 'book_remove' pk=book.pk %}" class="delete-form">{% csrf_token %}
+                <button type="submit" class="book-view-btn" name="delete">Delete</button>
+            </form>
+        </span>
 
             
-        {% endif %}
+        
 
         </div>
 
