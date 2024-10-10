@@ -133,3 +133,7 @@ header{
 .delete-form > button:hover{
     background-color: red;
 }
+
+form{
+    border: 1px solid black;
+}
